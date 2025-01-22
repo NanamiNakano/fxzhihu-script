@@ -1,6 +1,6 @@
 import { defineConfig } from "vite"
 import Userscript from "vite-userscript-plugin"
-import { name, version, description } from "./package.json"
+import { name, version, description, license } from "./package.json"
 
 export default defineConfig((_) => {
   return {
@@ -11,6 +11,8 @@ export default defineConfig((_) => {
           name,
           version,
           description,
+          license,
+          namespace: "https://thynanami.dev",
           match: [
             "https://www.zhihu.com/question/*",
             "https://www.zhihu.com/question/*/answer/*",
