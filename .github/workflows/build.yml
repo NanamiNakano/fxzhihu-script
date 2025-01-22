@@ -1,0 +1,31 @@
+name: Build and Release
+
+on:
+  push:
+    tags:
+      - "v*.*.*"
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v4
+      
+      - name: Setup Node.js environment
+        uses: actions/setup-node@v4.1.0
+
+      
+      - name: Setup pnpm
+        uses: pnpm/action-setup@v4.0.0
+
+      - name: Install dependencies
+        run: pnpm install -D
+
+      - name: Build
+        run: pnpm run build
+      
+      - name: Release
+        uses: softprops/action-gh-release@v2
+        with:
+          files: dist/fxzhihu-script.user.js
