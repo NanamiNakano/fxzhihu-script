@@ -17,6 +17,7 @@ export default defineConfig(
               "https://www.zhihu.com/question/*",
               "https://www.zhihu.com/question/*/answer/*",
               "https://zhuanlan.zhihu.com/p/*",
+              "https://www.zhihu.com/pin/*",
               "https://www.google.com/search*",
             ],
           },
