@@ -1,12 +1,12 @@
 const href = window.location.href
 
 if (href.includes("google")) {
-  const links = document.querySelectorAll("span > a[rel=\"noopener\"]")
+  const links = document.querySelectorAll("a[rel=\"noopener\"]")
   links.forEach(link => {
     const linkHref = link.getAttribute("href") || ""
     if (linkHref.includes("www.zhihu.com/question") || linkHref.includes("zhuanlan.zhihu.com/p")) {
       link.setAttribute("href", linkHref.replace("zhihu.com", "fxzhihu.com"))
-      const cite = link.querySelector("div > div > div > div > cite")
+      const cite = link.querySelector("div > div > div > div > cite") || link.querySelector("span[role=\"text\"]")
       if (cite) {
         cite.textContent = cite.textContent?.replace("zhihu.com", "fxzhihu.com") || ""
       }
