@@ -1,6 +1,8 @@
 # Fxzhihu Script
 
-Fix up zhihu in your browser
+Fix up zhihu in your browser.
+
+This script is designed for people who only want to read zhihu.com comfortably. Please do not install this script if you want to visit original pages.
 
 ## Features
 
