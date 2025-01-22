@@ -1,7 +1,10 @@
 const href = window.location.href
 
 if (href.includes("google")) {
-  const links = document.querySelectorAll("a[rel=\"noopener\"]")
+  let links = document.querySelectorAll("a[rel=\"noopener\"]")
+  if (links.length == 0) {
+    links = document.querySelectorAll("a[role=\"presentation\"]")
+  }
   links.forEach(link => {
     const linkHref = link.getAttribute("href") || ""
     if (linkHref.includes("www.zhihu.com/question") || linkHref.includes("zhuanlan.zhihu.com/p")) {
